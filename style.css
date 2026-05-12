@@ -113,15 +113,19 @@ input{
         color: transparent;
 }
 
-.task-info{
+.task-plate {
     display: flex;
+    justify-content: space-between; 
     align-items: center;
-    gap: 15px;
+    background-color: #111827;
+    padding: 15px 20px;
+    border-radius: 12px;
+    flex-grow: 1; 
+    margin-left: 15px; 
 }
 
-.bam{
-background-color: #111827;
-padding: 15px 20px;
-    border-radius: 12px;
-
+.task-checkbox {
+    transform: scale(1.5);
+    accent-color: #22C55E;
+    cursor: pointer;
 }
