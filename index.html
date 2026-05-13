@@ -14,14 +14,28 @@
       <h1 class="welcome">Your ToDo List</h1>
       <p class="done">Done 1/5</p>
       <div class="input-group">
-        <input type="text" placeholder="What are your plans for today?" />
-        <button class="add">Add your task</button>
+        <input
+          type="text"
+          placeholder="What are your plans for today?"
+          id="task-input"
+        />
+        <button class="add" id="add-btn">Add your task</button>
       </div>
-      <ul class="task-list">
+      <ul class="task-list" id="task-list">
+        <p class="empty-msg" id="empty-msg">
+          Your list is empty. Add something!
+        </p>
         <li class="task-item">
-          <input type="checkbox" class="task-checkbox" />
+          <!-- Чекбокс окремо -->
+          <label class="checkbox-container">
+            <input type="checkbox" class="task-checkbox" />
+            <span class="custom-checkbox"></span>
+          </label>
+
+          <!-- Плашка, яка має розтягнутися -->
           <div class="task-plate">
             <span class="task-text">Task #1</span>
+
             <div class="task-actions">
               <button class="edit-btn">EDIT</button>
               <button class="dlt-btn">DELETE</button>
@@ -30,5 +44,6 @@
         </li>
       </ul>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

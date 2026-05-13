@@ -27,6 +27,9 @@ width: 100%;
 max-width: 600px;
 padding: 20px;
 text-align: center;
+display: flex;
+flex-direction: column;
+align-items: stretch;
 }
 
 .input-group{
@@ -43,6 +46,7 @@ input{
     flex-grow: 1;
     font-weight: bold;
     font-size: large;
+    color: antiquewhite;
 }
 
 .done{
@@ -88,8 +92,10 @@ input{
 /* Сама галочка */
 .task-checkbox {
     transform: scale(1.5);
-    accent-color: #22C55E;
+    accent-color: #008000;
     cursor: pointer;
+    opacity: 0;
+    position: absolute;
 }
 
 /* Темна плашка — ТЕПЕР ЦЕ ЗАМІСТЬ .bam */
@@ -104,6 +110,7 @@ input{
     flex-grow: 1;
     /* ОЦЕ змушує плашку бути довгою */
     margin-left: 15px;
+    width: 100%;
 }
 
 /* Кнопки */
@@ -131,3 +138,43 @@ input{
 }
 
 /* Рожевий */
+
+.custom-checkbox{
+    display: inline-block;
+    width: 40px;
+    height: 35px;
+    border: 4px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.task-checkbox:checked + .custom-checkbox{
+    background-color: #008000;
+    border-color: #008000;
+}
+
+.custom-checkbox::after {
+    content: "";
+    position: absolute;
+    display: none;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    top: 4px;
+    left: 12px;
+}
+
+.task-checkbox:checked + .custom-checkbox::after {
+    display: block;
+}
+
+.empty-msg{
+    color: #64748b;
+    text-align: center;
+    font-style: italic;
+    margin-top: 20px;
+    font-weight: 400;
+}
